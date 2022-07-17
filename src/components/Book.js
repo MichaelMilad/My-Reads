@@ -42,7 +42,7 @@ const Book = ({ book, updateBook }) => {
 };
 
 Book.propTypes = {
-  books: PropTypes.array.isRequired,
+  book: PropTypes.object.isRequired,
   updateBook: PropTypes.func.isRequired,
 };
 

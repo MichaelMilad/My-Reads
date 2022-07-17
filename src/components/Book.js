@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Book = ({ book, updateBook }) => {
   const imgUrl = book.imageLinks ? book.imageLinks.thumbnail : '';
@@ -38,6 +39,11 @@ const Book = ({ book, updateBook }) => {
       <Link to={`book?id=${book.id}`}>details</Link>
     </li>
   );
+};
+
+Book.propTypes = {
+  books: PropTypes.array.isRequired,
+  updateBook: PropTypes.func.isRequired,
 };
 
 export default Book;

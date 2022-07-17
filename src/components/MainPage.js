@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import BookShelf from './BookShelf';
 import { Link } from 'react-router-dom';
 
@@ -31,6 +32,11 @@ const MainPage = ({ books, updateBook }) => {
       </div>
     </div>
   );
+};
+
+MainPage.propTypes = {
+  books: PropTypes.array.isRequired,
+  updateBook: PropTypes.func.isRequired,
 };
 
 export default MainPage;

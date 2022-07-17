@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { search } from '../BooksAPI';
 import Book from './Book';
 
-const SearchPage = ({ setSearchPage, updateBook, books }) => {
+const SearchPage = ({ updateBook, books }) => {
   const [query, setQuery] = useState('');
   const [searchBooks, setSearchBooks] = useState([]);
 
@@ -33,7 +34,7 @@ const SearchPage = ({ setSearchPage, updateBook, books }) => {
   return (
     <div className="search-books">
       <div className="search-books-bar">
-        <Link to="/" className="close-search" onClick={setSearchPage}>
+        <Link to="/" className="close-search">
           Close
         </Link>
         <div className="search-books-input-wrapper">
@@ -58,6 +59,11 @@ const SearchPage = ({ setSearchPage, updateBook, books }) => {
       </div>
     </div>
   );
+};
+
+SearchPage.propTypes = {
+  books: PropTypes.array.isRequired,
+  updateBook: PropTypes.func.isRequired,
 };
 
 export default SearchPage;

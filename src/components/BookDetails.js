@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const BookDetails = ({ books }) => {
   const queryParams = new URLSearchParams(window.location.search);
   const id = queryParams.get('id');
@@ -75,6 +77,10 @@ const BookDetails = ({ books }) => {
       </div>
     </div>
   );
+};
+
+BookDetails.propTypes = {
+  books: PropTypes.array.isRequired,
 };
 
 export default BookDetails;
